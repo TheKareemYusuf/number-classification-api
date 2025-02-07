@@ -23,11 +23,14 @@ const classifyNumber = async (req: Request, res: Response, next: NextFunction): 
       return;
     }
 
-    const is_prime = isPrime(num);
-    const is_perfect = isPerfect(num);
-    const properties = numberProperties(num);
-    const digit_sum = digitSum(num);
-    const fun_fact = await funFact(num, next);
+    // Run calculations in parallel
+    const [is_prime, is_perfect, properties, digit_sum, fun_fact] = await Promise.all([
+      Promise.resolve(isPrime(num)),
+      Promise.resolve(isPerfect(num)),
+      Promise.resolve(numberProperties(num)),
+      Promise.resolve(digitSum(num)),
+      funFact(num, next)
+    ]);
 
     res.status(200).json({
       number: num,
