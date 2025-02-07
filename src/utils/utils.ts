@@ -41,7 +41,10 @@ export const numberProperties = (num: number): string[] => {
 };
 
 export const digitSum = (num: number): number => {
-    return num
+    // Handle negative numbers by using absolute value
+    const absNum = Math.abs(num);
+    
+    return absNum
         .toString()
         .split('')
         .map(Number)
