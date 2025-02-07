@@ -51,7 +51,7 @@ export const digitSum = (num: number): number => {
 
 export const funFact = async (num: number, next: NextFunction): Promise<void> => {
     try {
-        const response = await axios.get(`${CONFIG.NUMBERS_API_URL}${num}/`);
+        const response = await axios.get(`${CONFIG.NUMBERS_API_URL}${num}/${CONFIG.NUMBERS_API_TYPE}`);
         // console.log(response.data);
         return response.data;
 
