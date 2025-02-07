@@ -26,7 +26,7 @@ A RESTful API that provides interesting mathematical properties and fun facts ab
 
 1. Clone the repository:
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/TheKareemYusuf/number-classification-api.git
 cd number-classification-api
 ```
 
